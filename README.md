@@ -45,3 +45,14 @@ With ```src``` and ```alt``` you give the source of the file and a text that is 
 With ```title``` you can give a title to the image that will show up when the user hovers the mouse over it.
 
 ***Images are not technically inserted on the website, they are linked on the HTML document. The ```<img>``` tag represents the space for the image.***
+
+With ```width``` and ```height``` you can adjust the width and the height of the ```<img>``` tag where the image will be put. You should add those attributes since it takes a long time for images to load on websites and if you already have a designated place, with specific width and height attributes, then you will know how much space the ```<img>``` element will occupy. This helps you a lot because, in this way, you can make sure that the rest of the website and its design can be generated without any issues, since the website already knows how much space the ```<img>``` element will occupy.
+
+You can use ```<figure>``` and ```<figcaption>``` in order to describe an image. Example:
+
+```HTML
+<figure>
+    <img src="img/test.jpg" alt="Test Picture" width="400" height="256" title="Test Picture">
+    <figcaption>This is the description of the picture.</figcaption>
+</figure>
+```
