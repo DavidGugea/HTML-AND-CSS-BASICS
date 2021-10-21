@@ -56,3 +56,27 @@ You can use ```<figure>``` and ```<figcaption>``` in order to describe an image.
     <figcaption>This is the description of the picture.</figcaption>
 </figure>
 ```
+
+In order to work with html mappings you have to create a map with an id and at it to the usermap attribute inside the image that you want to create a mapping for.
+
+Example:
+
+```HTML
+<img src="test.jpg" alt="Toy cars" title="Toy cars" usemap="#my_map">    
+<map id="my_map" name="my_map">
+    <area target="" alt="Alternative Title" title="Title 1" href="" coords="10,20,30,40,50,60,70,80,90,100" shape="poly">
+    <area target="" alt="Alternative Title" title="Title 2" href="" coords="110,120,130,140,150,160,170,180,190,200" shape="poly">
+</map>
+```
+
+You can see that we first just built a normal image and then added the attribute ```usemap``` to the image with the id of the mapping. Inside the ```map``` we add different areas with their descriptions.
+
+You can use the ```<picture>``` tag in order to insert more images with different resolutions for certain media queries.
+
+```HTML
+<picture>
+    <source media="(min-width:1024px)" srcset="images/test_1024.jpg">
+    <source media="(min-width:640)" srcset="images/test_640.jpg">
+    <source media="(min-width:480)" srcset="images/test_480.jpg">
+</picture>
+```
