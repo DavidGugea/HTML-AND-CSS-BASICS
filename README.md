@@ -80,3 +80,43 @@ You can use the ```<picture>``` tag in order to insert more images with differen
     <source media="(min-width:480)" srcset="images/test_480.jpg">
 </picture>
 ```
+
+## Chapter 7 ( HTML Forms )
+
+You can add a ```fieldset``` in order to summarize/give a title to a form. You can use it to structure your website better. Example:
+
+```HTML
+<fieldset>
+    <legend><h2>Input</h2></legend>
+    <form>
+        <label>Username</label>
+        <input type="text" placeholder="Username" required>
+        <label>Password</label>
+        <input type="password" placeholder="Password" required>
+    </form>
+</fieldset>
+```
+
+A ```datalist``` allows you to give only a couple of options to an ```input```.
+
+```HTML
+<form>
+    Title <input type="text" list="mylist" name="titel">
+    <br>
+    <datalist id="mylist">
+        <option value="Mr"></option>
+        <option value="Mrs"></option>
+        <option value="Prof."></option>
+    </datalist>
+</form>
+```
+
+If you want to summarize a block of text and add a drop down menu to it whenever you click on the summarized message, you can use a ```details``` tag:
+
+```HTML
+<p>Lorem ipsum dolor sit amet.</p>
+<details>
+    <summary>Lorem, ipsum.</summary>
+    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident autem labore reprehenderit et placeat, dicta laborum voluptas, nostrum quidem officia delectus. Voluptatem fuga in similique quaerat repellat cupiditate necessitatibus ut?</blockquote>
+</details>
+```
