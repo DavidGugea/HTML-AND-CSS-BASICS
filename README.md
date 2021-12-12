@@ -120,3 +120,18 @@ If you want to summarize a block of text and add a drop down menu to it whenever
     <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident autem labore reprehenderit et placeat, dicta laborum voluptas, nostrum quidem officia delectus. Voluptatem fuga in similique quaerat repellat cupiditate necessitatibus ut?</blockquote>
 </details>
 ```
+
+## Chapter 8 ( Introduction to CSS )
+
+You can import css files inside your css file using the ```@import``` query.
+
+Example:
+
+```CSS
+@import url("header.css");
+@import url("paragraph.css");
+
+div{
+    background-color: blue;
+}
+```
