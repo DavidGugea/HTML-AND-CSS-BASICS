@@ -1,0 +1,18 @@
+header,
+nav,
+footer{
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+}
+
+h1,
+abbr{
+    color: grey;
+}
+
+p{
+    border: 1px dotted gray;
+    padding: 20px;
+    text-align: center;
+}

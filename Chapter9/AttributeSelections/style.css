@@ -1,0 +1,29 @@
+/* All <a> where title = "Google" */
+a[title="Google"]{
+    color: green;
+}
+
+/* All <a> where "Test" is a stand-alone word. In this example: Title = "Google Test"*/
+a[title~="Test"]{
+    color: brown;;
+}
+
+/* All <a> where "Google" is bound by a "-" sign as attribute. In this example: Title = "Google-Test" */
+a[title|="Google"]{
+    color: pink;
+}
+
+/* All <a> where "oo" is inside the title */
+a[title*="oo"]{
+    color: red;
+}
+
+/* All <a> where the title attribute ends with "gle" */
+a[title$="gle"]{
+    color: green;
+}
+
+/* All <a> where the title attribute starts with "Goo" */
+a[title^="Goo"]{
+    color: pink;
+}

@@ -1,0 +1,15 @@
+#mainBox{
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+}
+
+.greyColor{
+    color: grey;
+}
+
+.specialParagraph{
+    border: 1px dotted gray;
+    padding: 20px;
+    text-align: center;
+}

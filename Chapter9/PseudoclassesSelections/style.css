@@ -1,0 +1,44 @@
+input{
+    background-color: lightgray;
+}
+
+input:focus{
+    background-color: black;
+}
+
+input:hover{
+    background-color: pink;
+}
+
+input:placeholder-shown{
+    color: red;
+}
+
+a:active{
+    color: red;
+}
+
+ul li:first-child{
+    color: red;
+}
+
+ul li:last-child{
+    color: red;
+}
+
+ul li:nth-child(5){
+    color: green;
+}
+
+ul li:nth-of-type(even){
+    color: brown;
+}
+
+/*
+:root{
+    background-color: blue;
+}
+*/
+:empty{
+    border: 5px dotted blue;
+}
