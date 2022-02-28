@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        div {
+            width: 500px;
+            height: 500px;
+        }
+        div#box1 {
+            background-color: black;
+            z-index: 2;
+        }
+        div#box2 {
+            background-color: red;
+
+            position: absolute;
+            top: 250px;
+            left: 250px;
+            z-index:3
+        }
+        p#text{
+            color: white;
+            border: 5px white solid;
+            text-align: center;
+
+            position: relative;
+            top: 250px;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt illo magni fugiat veniam incidunt est pariatur doloremque sequi fuga ad culpa itaque esse consequuntur iste, sunt cum! Asperiores assumenda praesentium veritatis consequuntur expedita. Obcaecati, accusantium vero? Ea, doloribus deleniti natus molestiae earum illum assumenda aliquid optio, veritatis quidem, harum odio!</p>
+    </div>
+    <div id="box2">
+    </div>
+</body>
+</html>
