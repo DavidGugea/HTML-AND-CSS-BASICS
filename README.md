@@ -1,6 +1,6 @@
 # The basics of HTML5 and CSS3
 
-## Chapter 5 ( Tables and Hyperlinks )
+# 5. Tables and Hyperlinks
 
 Hyperlinks have different types of attributes.
 
@@ -37,7 +37,7 @@ You can also use this anchors to navigate to specific parts of an external websi
 <a href="https://www.test_website.com/index.html#HEADLINE">Headline of another website</a>
 ```
 
-## Chapter 6 ( Grafics and Multimedia )
+# 6. Grafics and Multimedia
 
 ### ```<img>```
 
@@ -81,7 +81,7 @@ You can use the ```<picture>``` tag in order to insert more images with differen
 </picture>
 ```
 
-## Chapter 7 ( HTML Forms )
+# 7. HTML Forms
 
 You can add a ```fieldset``` in order to summarize/give a title to a form. You can use it to structure your website better. Example:
 
@@ -135,3 +135,139 @@ div{
     background-color: blue;
 }
 ```
+
+# 12. CSS Positioning
+
+## CSS Position 
+
+The ```position``` property sets how an element is positioned inside the document. The properties ```top```, ```right```, ```bottom``` and ```left``` determine the final location of the element.
+
+These are the following value that the ```position```  property can take:
+
+```CSS
+position: static;
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky;
+
+/* Global values */
+position: inherit;
+position: initial;
+position: revert;
+position: revert-layer;
+position: unset;
+```
+
+### Values explained:
+
+This is what our html document looks like before changing the position of elements:
+
+![Positioning in markdown](ScreenshotsForNotes/NoPositioningHTML.PNG)
+
+#### ```Static```
+
+***The static value is the default value.*** It means that the element is positioned according to the flow of the document. When an element has the ```static``` position, the properties ```top```, ```right```, ```bottom```, ```left``` and ```z-index``` have *no effect*.
+
+#### ```Relative```
+
+When you first set an element to be positioned ```relative``` you will see that nothing has changes. When an element is positioned ```relative```, then the element isn't taken out of the flow of the document. The element can however change its position using the ```top```, ```right```, ```bottom``` and ```left``` properties. Example:
+
+```CSS
+#box5{
+    position: relative;
+    left: 600px;
+}
+```
+
+![Relative position changed](ScreenshotsForNotes/RelativeChanged.PNG)
+
+The other elements will behave as if ```#box5``` is still there, even though it has moved. 
+
+***The properties ```top```, ```right```, ```bottom``` and ```left``` only change its position relative to its original position.***
+
+MDN:
+
+> The element is positioned according to the normal flow of the document, and then offset relative to itself based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements; thus, the space given for the element in the page layout is the same as if position were static.
+
+#### ```Absolute```
+
+When an element is positioned ```absolute```, then that element is completely taken out of the flow of the document. All the other elements will behave as if it's simply not there. Just like with ```relative``` positioning, you can change the location using ```top```, ```right```, ```bottom``` and ```left```. 
+
+This is what the element looks like after I've positioned it ```absolute``` with nothing else to it:
+
+```CSS
+#box5{
+    position: absolute;
+}
+```
+
+![Relative position changed](ScreenshotsForNotes/SimpleAbsolute.PNG)
+
+You can see that the element has been taken out of the flow of the document and the other elements behave as if it's not there. The ```box6``` is under ```box5``` now but ```box5``` is shown since it has a higher ```z-index```.
+
+Now, as previously mentioned, we can change its position using the properties ```top```, ```right```, ```bottom``` and ```left```:
+
+```CSS
+#box5{
+    position: absolute;
+
+    top: 250px;
+    right: 30px;
+}
+```
+
+![Absolute simple location](ScreenshotsForNotes/AbsoluteSimpleLocationChange.PNG)
+
+The element has been positioned to be 30px far from the right side of the document and 250px far from the top side of the document.
+
+The way ```top```, ```right```, ```bottom``` and ```left``` behave is also determined by the closest positioned element of the element that is set to be ```absolute``` ( note that a positioned element is considered an element that has the ```position``` property anything but ```static```, which is the default ```position``` property ).
+
+That means that if the parent element of ```box5``` is set to be for example ```relative```, then that will change the behavior of the ```top```, ```right```, ```bottom``` and ```left``` properties.
+
+Here is an example of how we changed the document before any positioning happened:
+
+![Margin Main](ScreenshotsForNotes/MarginMain.PNG)
+
+We have a ```<main></main>``` tag with some margin and padding and inside we have the boxes.
+
+Let's change ```box5``` and give it a position of ```absolute``` and change its location:
+
+```CSS
+#box5{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+```
+
+![Absolute Position](ScreenshotsForNotes/AbsoluteChangeNoRelativeYetMainPadding.PNG)
+
+Now, let's see how this element looks like when we change its parent element to also be positioned ( we will position it ```relative``` ):
+
+```CSS
+main {
+    margin: auto;
+    width: 700px;
+    height: 700px;
+    padding: 20px;
+    border: 3px solid black;
+
+    position: relative;
+}
+
+#box5{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+```
+
+![Absolute Position](ScreenshotsForNotes/AbsoluteChangeRelativeParent.PNG)
+
+Now you can see that the position has changed but it's relative to its parent element ( in this case the ```<main></main>``` element )
+
+MDN:
+
+> The element is removed from the normal document flow, and no space is created for the element in the page layout. It is positioned relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block. Its final position is determined by the values of top, right, bottom, and left.
+> This value creates a new stacking context when the value of z-index is not auto. The margins of absolutely positioned boxes do not collapse with other margins.
