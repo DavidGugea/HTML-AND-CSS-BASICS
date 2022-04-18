@@ -23,8 +23,10 @@ main {
     height: 700px;
     padding: 20px;
     border: 3px solid black;
+    position: relative;
 }
 
-#outsideBox{
-    position: fixed;
+div#outsideBox{
+    position: sticky;
+
 }
