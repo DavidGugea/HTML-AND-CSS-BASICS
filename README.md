@@ -1697,7 +1697,7 @@ This is only supported in Firefox right now, but it really needs to get everywhe
 
 It’s also useful to know about display: contents;. This is not the same as subgrid, but it can be a useful tool sometimes in a similar fashion.
 
-```
+```HTML
 <div class="grid-parent">
 
   <div class="grid-item"></div>
